@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirigiendo...</title>
+</head>
+<body>
+  <p>Redirigiendo...</p>
+
+  <script>
+    // Ej: /12345
+    // https://script.google.com/macros/s/AKfycbzAM0Z2cLq1tHb_63CrPzK0DgYkX27qILmMis-Nx6XtFI6TRA7HvofaPXOjG-ozU60E/exec?id=INS-001
+    const ID_SCRIPT = "AKfycbzAM0Z2cLq1tHb_63CrPzK0DgYkX27qILmMis-Nx6XtFI6TRA7HvofaPXOjG-ozU60E";
+    const path = window.location.pathname.replace("/", "");
+
+    // URL de tu Apps Script
+    const SCRIPT_URL = `https://script.google.com/macros/s/${ID_SCRIPT}/exec`;
+
+    if (path) {
+      window.location.href = `${SCRIPT_URL}?id=${path}`;
+    } else {
+      document.body.innerHTML = "<h2>ID no válido</h2>";
+    }
+  </script>
+</body>
+</html>
